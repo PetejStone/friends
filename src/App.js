@@ -3,10 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Form from './components/Form';
+import Friends from './components/Friends'
 import Friends from './components/Friends';
-import {Route }from 'react-router-dom';
 
-class App extends React.Component {
+import {Route }from 'react-router-dom';class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -31,6 +31,5 @@ class App extends React.Component {
   );
   }
 }
-
 
 export default App;
