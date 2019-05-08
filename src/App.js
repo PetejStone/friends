@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-
+import Form from './components/Form';
+import Friends from './components/Friends'
 class App extends React.Component {
   constructor() {
     super();
@@ -11,23 +12,18 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:5000/friends')
-    
-    .then(res => this.setState({friends: res.data}) )
+  
+  postFriend = friend => {
+    axios.post('http://localhost:5000/friends', friend)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
   }
 
   render() {
   return (
     <div className="App">
-      {this.state.friends.map(friend => 
-        <div>
-          <h2>{friend.name}</h2>
-          <p>Age: {friend.age}</p>
-          <p>Email: {friend.email}</p>
-        </div>
-        
-        )}
+      <Friends />
+        <Form/>
     </div>
   );
   }
