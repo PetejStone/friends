@@ -18,7 +18,6 @@ class App extends React.Component {
     .then(res => console.log(res))
     .then(res => alert(`You have successfully added to the list!`))
     .catch(err => console.log(err))
-   
    }
 
   render() {
