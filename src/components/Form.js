@@ -14,8 +14,8 @@ class Form extends React.Component {
     
  postFriend = e => {
         e.preventDefault();
-        //this.props.postFriend(this.state.friend);
-        console.log(this.state.friend)
+        this.props.postFriend(this.state.friend);
+        //console.log(this.state.friend)
     }
 
     handleChange = e => {
