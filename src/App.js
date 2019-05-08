@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Form from './components/Form';
-import Friends from './components/Friends'
+import Friends from './components/Friends';
+import {Route }from 'react-router-dom';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -23,8 +25,8 @@ class App extends React.Component {
   render() {
   return (
     <div className="App">
-      <Friends />
-        <Form postFriend={this.postFriend} />
+      <Route render={() => <Friends />} />
+       <Route render={() => <Form postFriend={this.postFriend} /> }/> 
     </div>
   );
   }
