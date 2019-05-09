@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Form from './components/Form';
+
 import Friends from './components/Friends'
 import UpdateFriend from './components/UpdateFriend';
 import {Route }from 'react-router-dom';
@@ -41,10 +42,11 @@ class App extends React.Component {
       .catch(err => console.log(err));
   };
 
-  updateFriend = (id) => {
-    //console.log('hello')
+  updateFriend = (friend) => {
+  
+    console.log(friend[0].id)
     axios
-      .delete(`http://localhost:5000/friends/${id}`)
+      .put(`http://localhost:5000/friends/${friend[0].id}`, friend)
       .then(res => {
        console.log(res);
        this.setState({ friends: res.data });
