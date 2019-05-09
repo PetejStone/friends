@@ -38,7 +38,8 @@ class Form extends React.Component {
             <input type="number" id="age" onChange={this.handleChange} placeholder="Age" required/>
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" onChange={this.handleChange} placeholder="Email" required />
-            <button>Submit</button>
+            <button className="submit">Submit</button>
+            <button className="goback" onClick={(props) => this.props.history.push('/')}>Go Back</button>
         </form>
     )
     }

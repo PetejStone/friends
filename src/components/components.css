@@ -41,11 +41,35 @@ form input {
 
 form button {
     width: 50%;
-    height: 2rem;
+    height: 3rem;
     border: none;
     background-color: lightseagreen;
     color: white;
     border-radius: 15px;
     margin: 0 auto;
     margin-top: 1rem;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+.goback {
+    background-color: grey;
+}
+
+.addfriend {
+    width: 75%;
+    height: 3rem;
+    border: none;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    cursor: pointer;
 }
