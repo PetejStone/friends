@@ -32,13 +32,14 @@ class Form extends React.Component {
     render() {
     return (
         <form onSubmit={this.postFriend}>
-            <label for="name">Name:</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" id="name" onChange={this.handleChange} placeholder="Name" required/>
-            <label for="age">Age:</label>
+            <label htmlFor="age">Age:</label>
             <input type="number" id="age" onChange={this.handleChange} placeholder="Age" required/>
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input type="email" id="email" onChange={this.handleChange} placeholder="Email" required />
-            <button>Submit</button>
+            <button className="submit">Submit</button>
+            <button className="goback" onClick={(props) => this.history.props.push('/')} >Go Back</button>
         </form>
     )
     }
