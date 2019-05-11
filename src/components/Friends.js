@@ -11,12 +11,12 @@ class Friends extends React.Component {
         }
     }
 
-    componentDidMount() {
+    // componentDidMount() {
 
-        axios.get('http://localhost:5000/friends')
-        .then(res => {console.log(res); this.setState({friends: res.data}) })
-        .catch(err => err);
-      }
+    //     axios.get('http://localhost:5000/friends')
+    //     .then(res => {console.log(res); this.setState({friends: res.data}) })
+    //     .catch(err => err);
+    //   }
     
 
     
@@ -39,7 +39,7 @@ class Friends extends React.Component {
        return (
            <div>
            <div className="friends">
-            {this.state.friends.map((friend,index) => 
+            {this.props.friends.map((friend,index) => 
                 <div className="friend" id={friend.id} data={JSON.stringify(friend)} key={index}>
                     <h2>{friend.name}</h2>
                     <p>Age: {friend.age}</p>

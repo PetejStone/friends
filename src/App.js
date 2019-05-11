@@ -17,7 +17,11 @@ class App extends React.Component {
     }
     
   }
-
+  componentDidMount() {
+    axios.get('http://localhost:5000/friends')
+      .then(res => this.setState({ friends: res.data}))
+      .catch(err => err)
+  }
   
 
  postFriend = friend => {
@@ -36,7 +40,7 @@ class App extends React.Component {
       .delete(`http://localhost:5000/friends/${id}`)
       .then(res => {
        console.log(res);
-       window.location.reload();
+       this.setState({ friends: res.data})
        //this.props.history.push('/')
       })
       .catch(err => console.log(err));
@@ -69,7 +73,7 @@ class App extends React.Component {
   return (
     <div className="App">
   
-      <Route exact path="/" render={(props) => <Friends {...props} deleteFriend={this.deleteFriend} setUpdateForm={this.setUpdateForm} />} />
+      <Route exact path="/" render={(props) => <Friends {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} setUpdateForm={this.setUpdateForm} />} />
        <Route path="/form" render={  (props) => <Form {...props} postFriend={this.postFriend} /> }/> 
        <Route path="/update-friend" render={  (props) => <UpdateFriend {...props} updateFriend={this.updateFriend} activeFriend={`[${this.state.activeFriend}]`} /> }/> 
     </div>
