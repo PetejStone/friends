@@ -29,23 +29,24 @@ class UpdateFriend extends React.Component {
     render() {
     return (
         <form onSubmit={this.updateFriend}>
+        {console.log(this.state.friend[0])}
             <label htmlFor="name">Name:</label>
             <input type="text" 
                     id="name"  
                     onChange={this.handleChange} 
-                    placeholder={this.state.friend.length === 0 ? "Name" : this.state.friend[0].name}
+                    value={this.state.friend.length === 0 ? "Name" : this.state.friend.name}
                     
                     required/>
             <label htmlFor="age">Age:</label>
             <input type="number" 
                    id="age" onChange={this.handleChange} 
-                   placeholder={this.state.friend.length === 0 ? "Age" : this.state.friend[0].age}
+                   value={this.state.friend.length === 0 ? "Age" : this.state.friend.age}
                    required/>
             <label htmlFor="email">Email:</label>
             <input type="email" 
                    id="email" 
                    onChange={this.handleChange} 
-                   placeholder={this.state.friend.length === 0 ? "Email" : this.state.friend[0].email}
+                   value={this.state.friend.length === 0 ? "Email" : this.state.friend.email}
                     required />
             <button className="submit">Submit</button>
             <button className="goback" onClick={(props) => this.props.history.push('/')}>Go Back</button>
