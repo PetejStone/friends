@@ -33,7 +33,7 @@ class Form extends React.Component {
     return (
         <form onSubmit={this.postFriend}>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" autocompleteonChange={this.handleChange} placeholder="Name" required/>
+            <input type="text" id="name" onChange={this.handleChange} placeholder="Name" required/>
             <label htmlFor="age">Age:</label>
             <input type="number" id="age" onChange={this.handleChange} placeholder="Age" required/>
             <label htmlFor="email">Email:</label>

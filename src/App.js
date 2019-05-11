@@ -28,6 +28,7 @@ class App extends React.Component {
     axios
       .post('http://localhost:5000/friends', friend)
       .then(res => {
+        //console.log(res.data)
         this.setState({ friends: res.data });
         this.props.history.push('/');
       })
